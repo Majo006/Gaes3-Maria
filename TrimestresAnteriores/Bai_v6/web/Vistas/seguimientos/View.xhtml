@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSeguimientosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewSeguimientosLabel_id}" styleClass="accioncrear" />
+                    <h:outputText value="#{seguimientosController.selected.id}" title="#{bundle.ViewSeguimientosTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewSeguimientosLabel_descripción}" styleClass="accioncrear" />
+                    <h:outputText value="#{seguimientosController.selected.descripción}" title="#{bundle.ViewSeguimientosTitle_descripción}"/>
+                    <h:outputText value="#{bundle.ViewSeguimientosLabel_responsable}" styleClass="accioncrear" />
+                    <h:outputText value="#{seguimientosController.selected.responsable}" title="#{bundle.ViewSeguimientosTitle_responsable}"/>
+                    <h:outputText value="#{bundle.ViewSeguimientosLabel_productos}" styleClass="accioncrear" />
+                    <h:outputText value="#{seguimientosController.selected.productos}" title="#{bundle.ViewSeguimientosTitle_productos}"/>
+
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{seguimientosController.destroyAndView}" value="#{bundle.ViewSeguimientosDestroyLink}" styleClass="accionbajo" />
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewSeguimientosEditLink}" styleClass="accionbajo" />
+                <br />
+                <br/>
+                <h:commandLink action="#{seguimientosController.prepareCreate}" value="#{bundle.ViewSeguimientosCreateLink}" styleClass="accionbajo" />
+                <br />
+                <h:commandLink action="#{seguimientosController.prepareList}" value="#{bundle.ViewSeguimientosShowAllLink}" styleClass="accionbajo" />
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewSeguimientosIndexLink}" styleClass="accionbajo" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

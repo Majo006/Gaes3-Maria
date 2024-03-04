@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/web/login.xhtml</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/src/conf/persistence.xml</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/src/java/EJB/CuentasFacadeLocal.java</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/web/index.xhtml</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/web/resources/css/jsfcrud.css</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/src/java/entity/Cuentas.java</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/web/template.xhtml</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/web/Vistas/dashboard.xhtml</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/src/java/JSF/CuentasController.java</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/src/java/EJB/UsersFacade.java</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/src/java/controller/cuentasController.java</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/web/resources/css/login.css</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/LoginOlga.xhtml</file>
+            <file>file:/C:/Users/maria/OneDrive/Documentos/NetBeansProjects/Bai_v5/src/java/dao/CuentasDao.java</file>
+        </group>
+    </open-files>
+</project-private>

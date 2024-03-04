@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Principal</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+    </h:head>
+
+    <h:body>
+
+        <header>
+            <img src="img/Logo1.png" alt="" class="imagen-logo" />
+
+            <div class="icon-menu">
+                <a href="#" class="enlace-con-icono">
+                    <i class="fa-solid fa-bars"></i> <!-- Icono de barras de Font Awesome -->
+                </a>
+            </div>
+
+            <div class="icon-user">
+                <a href="#" class="enlace-con-user">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+            <div class="infos">
+                <a href="#servicio">Servicios</a>
+            </div>
+            <div class="info3">
+                <a href="#quienes-somos">¿Quienes Somos?</a>
+            </div>
+
+            <h:panelGroup rendered="#{cuentasController.isLoggedIn()}">
+                <div class="ci" >
+                    <h:link outcome="/Vistas/events/CrearcitaCliente">Agendar Cita</h:link>
+                </div>
+
+                <div class="hi" >
+                    <h:link outcome= "/Vistas/404.xhtml" >Historial</h:link> 
+                </div>
+
+            </h:panelGroup>
+            <h:panelGroup rendered="#{not cuentasController.isLoggedIn()}">
+                <div class="ingreso">
+                    <h:link outcome="/login.xhtml">Inicio</h:link>
+                </div>
+
+
+                <div class="regis"> 
+                    <h:link outcome= "/Registro.xhtml" >Registro</h:link>
+                </div>
+
+            </h:panelGroup>
+
+            <div> 
+
+                <h:form class="cerrar">
+                    <p:commandButton class="login logout" value="Cerrar Sesión" action="#{cuentasController.logout}" rendered="#{cuentasController.isLoggedIn()}" ajax="false" />
+                </h:form>
+
+            </div>
+
+            <h:panelGroup rendered="#{cuentasController.isLoggedIn()}">
+                <div >
+                    <h:link outcome= "/Vistas/dashboard"><img class="dash" src="img/administrador.png"/></h:link>
+                </div>
+
+            </h:panelGroup>
+        </header>
+
+        <img src="img/FondoSa.png" alt="" class="imagen-fondo" />
+        <div class="encabezado"></div>
+
+        <div class="contenedor-imagen">
+            <div class="cuadro-transparente"></div>
+            <img src="img/Logo1.png" alt="" class="imagen-logo" />
+        </div>
+
+        <div class="icon-menu">
+            <a href="#" class="enlace-con-icono">
+                <i class="fa-solid fa-bars"></i> <!-- Icono de barras de Font Awesome -->
+            </a>
+        </div>
+
+        <div class="icon-user">
+            <a href="#" class="enlace-con-user">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+
+        <div class="citas">CITAS</div>
+        <div class="cuadrado"></div>
+        <div class="historial">HISTORIAL</div>
+
+        <div class="contenedor">
+            <div class="texto-izquierdo">OLGA LOOK</div>
+            <div class="texto-derecho">SALON DE BELLEZA</div>
+        </div>
+
+        <div class="cuadradito"></div>
+
+        <div class="imagenes">
+            <h:link outcome= "/Vistas/500.xhtml" > <img src="img/descarga.jpeg" alt="" class="cabello" /></h:link>
+            <h:link outcome= "/Vistas/500.xhtml" > <img src="img/depilar.jpeg" alt="" class="depilacion" /></h:link>
+            <h:link outcome= "/Vistas/500.xhtml" > <img src="img/6 Servicios de grooming y belleza a domicilio.jpeg" alt="" class="manicure" /></h:link>
+        </div>
+
+        <div class="cab">
+            <h:link outcome= "/Vistas/500.xhtml" >CABELLO</h:link> 
+        </div>
+        <div class="dep">
+            <h:link outcome= "/Vistas/500.xhtml" >DEPILACION</h:link>
+        </div>
+        <div class="man">
+            <h:link outcome= "/Vistas/500.xhtml" >MANICURE</h:link> 
+        </div>
+
+        <div id="servicio" class="desc">SERVICIOS</div>
+
+
+
+        <div id="quienes-somos" class="señoras2" >
+            <img src="img/Señora-N1.png" alt="" class="seño12" />
+            <img src="img/Señora N-2.png" alt="" class="seño22" />
+        </div>
+
+        <div class="parrafo2">
+            <p>En Olga Look Salon de Belleza, nuestra pasión es realzar la belleza natural de cada cliente.<br/>
+                Con más de una década de experiencia en la industria de la belleza, nos enorgullece ofrecer <br/>
+                servicios de alta calidad que te hacen sentir radiante y confiada.</p><p>Nuestro talentoso equipo<br/>
+                de estilistas y profesionales de la belleza está comprometido con superar tus expectativas.<br/> 
+                Creemos en la importancia de la atención personalizada, escuchando tus deseos y necesidades<br/>
+                para crear un look que refleje tu estilo y personalidad únicos.</p><p>En Olga Look, no solo<br/> 
+                nos esforzamos por hacer que te veas bien por fuera, sino que también nos importa cómo te <br/>
+                sientes por dentro. Nuestro salón es un refugio de relajación y rejuvenecimiento, donde te<br/>
+                mimamos y te consentimos en un ambiente tranquilo y acogedor.</p><p>Ya sea que busques un nuevo<br/>
+                corte de cabello, un tratamiento facial rejuvenecedor, un maquillaje impresionante o cualquier <br/>
+                otro servicio de belleza, Olga Look está aquí para ayudarte a sentirte y lucir lo mejor posible.</p>
+            <p>¡Te invitamos a visitarnos y experimentar la diferencia Olga Look hoy mismo!</p>
+        </div>
+
+        <div  class="quienes2">
+            ¿QUIENES SOMOS?
+        </div>
+
+        <footer pie="">
+            Derechos Reservados a Olga Look - Desde 2007
+        </footer>
+    </h:body>
+
+</html>

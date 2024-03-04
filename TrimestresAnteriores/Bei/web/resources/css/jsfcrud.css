@@ -1,0 +1,556 @@
+root { 
+    display: block;
+}
+
+body {
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3a4f54;
+    background-color: white;
+    font-size: small;
+    text-align: center;
+    
+}
+
+a {
+    color: #3a4f54;
+}
+
+table {
+    empty-cells: show;
+    margin-left: 250px;
+    margin-right: auto;
+    
+}
+
+form.jsfcrud_list_form th, td th {
+       font-size: x-small;
+    color: #4e6a71;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #b2d5d6;
+    border-bottom-color: #b2d5d6;
+    border-left-color: #90b4bd;
+    border-right-color: #90b4bd;
+    letter-spacing: 3px;
+    text-align: left;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 85px;
+    background-color: #75CFB8;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    padding: 15px 18px;
+    vertical-align: top;
+    padding-bottom: 8px;
+    font-size: small;
+    text-align: center;
+    
+}
+
+form.jsfcrud_list_form td, td td {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #b2d5d6;
+    border-bottom-color: #b2d5d6;
+    border-left-color: #b2d5d6;
+    border-right-color: #b2d5d6;
+    vertical-align:middle;
+    padding-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h\:commandLink,
+h\:link {
+    display: block; /* Convierte los enlaces en elementos de bloque */
+    text-align: center; /* Centra horizontalmente el texto dentro de los enlaces */
+    margin: 0 auto; /* Centra horizontalmente los enlaces dentro de su contenedor */
+}
+
+tr.jsfcrud_odd_row {
+    background-color: #fefeff;
+    color: #4e6a71;
+}
+
+
+tr.jsfcrud_even_row {
+    background-color: #FEE2B9;
+    color: #4e6a71;
+}
+
+#busyImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+
+
+.siderDashboard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px; /* Ancho fijo de la barra lateral */
+    height: 100%; /* Altura 100% para ocupar toda la altura del viewport */
+    background-color: #75CFB8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px; /* Añadir espacio interior según tus necesidades */
+    border-radius: 0 0px 0px 0; /* Esquinas redondeadas en el lado izquierdo */
+   
+}
+
+
+.siderDashboard {
+    /* Otros estilos... */
+    height: 100%;
+    width: 15%;
+    overflow-y: auto; /* Agregar desplazamiento vertical si es necesario */
+    
+}
+
+
+.siderDashboard .imagen-seguimientos,
+.siderDashboard .imagen-citas,
+.siderDashboard .imagen-cuentas,
+.siderDashboard .imagen-producto,
+.siderDashboard .imagen-usuarios {
+    
+    
+    position: static;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    align-items: center;
+    margin-top: 15px;
+    
+    
+}
+
+.siderDashboard a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: black; /* Cambia el color de texto de los enlaces, si es necesario */
+    font-size: 16px;
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    margin-bottom: 10px;
+    margin-top: -20px;
+}
+
+
+.imagen-logo {
+    width: 150px; /* Ancho más pequeño */
+    height: 70px; /* Altura más pequeña */
+    border-radius: 300px; 
+    position: absolute; 
+    top: 5px; 
+}
+
+/* encabezado total */
+header{
+    width: 100%;
+    background-color: #75CFB8;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 0 20px;
+    margin: auto;
+    
+    float: right;
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    z-index: 1000;
+    
+}
+header.woo{
+    background-color: #75CFB8;
+}
+
+
+
+.imagen-fondo {
+    width: 100%; /* Cambiado a 100% para ocupar todo el ancho */
+    height: 400px;
+    margin-top: 90px;
+    background-image: url('img/FondoSa.png');
+    background-size: cover;
+    background-position: left top;
+    /* Otros estilos relacionados con la imagen de fondo */
+}
+
+.encabezado {
+    width: 100%; /* Cambiado a 100% para ocupar todo el ancho */
+    height: 180px;
+    background-color: #75CFB8;
+    margin-top: -550px;
+    /* Otros estilos del encabezado */
+}
+
+.imagen-logo {
+    width: 200px; 
+    height: 90px; 
+    border-radius: 300px; 
+    position: absolute; 
+    top: 5px; 
+}
+/* icono de menú */
+.enlace-con-icono{ 
+    color: #000000 ;
+    transform: scale(1.2);
+}
+
+.enlace-con-icono:hover{
+    color: blue;
+}
+
+.icon-menu{
+    font-size: 40px; 
+    position: absolute;
+    left: 250px;
+    top: 30px;
+    color: #000000 ;
+    
+}
+
+/* icono de menú */
+.enlace-con-user{
+    color: #000000 ;
+    transform: scale(1.2);
+}
+
+.enlace-con-user:hover{
+    color: #FFD495;
+}
+
+.icon-user{
+    font-size: 40px;
+    position: absolute;
+    left: 600px;
+    top: -0px;
+}
+
+.ingreso {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #C0FEEA;
+    border-radius: 10px;
+    position: absolute;
+    top: 30px;
+    left: 950px;
+    
+}
+.ingreso a{
+    text-decoration: none;
+}
+.enlace-con-ingreso:hoover{
+     color: #FFD495;
+}
+
+
+
+.registro {
+     font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #C0FEEA;
+    border-radius: 10px;
+    position: absolute;
+    top: 30px;
+    left: 1100px;
+}
+.registro a{
+    text-decoration: none;
+}
+.info{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #C0FEEA;
+    border-radius: 10px;
+    position: absolute;
+    top: 30px;
+    left: 650px;
+}
+.info a{
+    text-decoration: none;
+}
+
+/* Estilo para el cuadro transparente */
+.cuadro-transparente {
+    width: 550px; 
+    height: 250px; 
+    background-color: rgba(139, 135, 135, 0.7); /* Color de fondo de transparecia uwu*/
+    position: absolute;
+    top: 160px;
+    left: 400px;
+    z-index: 1; /* cuadro encima de fondo*/
+}
+
+
+/* Estilos para el contenedor y los textos */
+.contenedor {
+    position: relative;
+    top: 175px;
+    right: 99px;
+    left: 10px;
+    top: 110px;
+    justify-content: space-between; 
+    align-items: center; 
+    color: aliceblue;
+    text-align: center;
+    z-index: 1;
+    
+}
+
+.texto-izquierdo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 45px; 
+    font-weight: bold;
+    text-align: center; /* Centrar el texto horizontalmente */
+    margin: 0 auto; /* Centrar el elemento en el contenedor */
+}
+
+
+ .texto-derecho {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px; 
+    font-weight: bold;
+    
+}
+
+/* Estilos para las señoras  */
+
+.señoras{
+    position: relative;
+    top: 480px;
+    
+}
+
+.seño1{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    position: relative;
+    left: -400px;
+    top: -120px;
+    
+}
+
+.seño2{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    position: relative;
+    left: -380px;
+      top: -120px;
+    
+}
+
+.parrafo{
+    margin: auto;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10px; 
+    font-weight: bold; 
+    position: relative;
+    top: 190px;
+    left: 130px;
+    
+}
+
+.quienes{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    top: -90px;
+    left: 130px;
+    
+}
+.accion {
+    /* Cambia el color de fondo */
+    color: #000; /* Cambia el color del texto */
+    padding: 2px 5px; /* Ajusta el espacio interno */
+    border: 1px solid #000; /* Agrega un borde */
+    text-decoration: none; /* Quita el subrayado de enlace */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    
+}
+.accionbajo {
+      background-color: #FFD495 ;/* Cambia el color de fondo */
+    color: #000; /* Cambia el color del texto */
+    padding: 2px 5px; /* Ajusta el espacio interno */
+    border: 1px solid #ffd495 ; /* Agrega un borde */
+    text-decoration: none; /* Quita el subrayado de enlace */
+    border-radius: 5px;  /* Agrega bordes redondeados */
+    
+}
+
+.accioncrear{
+       background-color: #75CFB8 ;/* Cambia el color de fondo */
+    color: #000; /* Cambia el color del texto */
+    padding: 2px 5px; /* Ajusta el espacio interno */
+    border: 1px solid  ; /* Agrega un borde */
+    text-decoration: none; /* Quita el subrayado de enlace */
+    border-radius: 0px;  /* Agrega bordes redondeados */
+    
+}
+.citas {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold; 
+    position: absolute;
+    left: 700px;
+    top: 7px;
+}
+
+.cuadrado {
+    width: 5px; 
+    height: 65px; 
+    background-color: #000000;
+    border-radius: 10px;
+    position: absolute;
+    left: 795px;
+    top: -15px;
+}
+
+.historial {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold; 
+    position: absolute;
+    left: 820px;
+    top: 7px;
+}
+
+.cuadradito {
+    width: 1360px; 
+    height: 200px; 
+    background-color:#75CFB8;
+    border-radius: 0px;
+    position: relative;
+    top: 400px;
+    right: 0px;
+    
+}
+
+.imagenes{
+    position: relative;
+    top: 265px;
+
+}
+
+
+.cabello{
+    height: 120px;
+    width: 250px;
+    border-radius: 20px;
+    position: relative;
+    right: 170px;
+}
+
+.depilacion{
+    height: 120px;
+    width: 300px;
+    border-radius: 20px;
+    position: relative;
+   right: 20px;
+}
+
+.manicure{
+    height: 120px;
+    width: 300px;
+    border-radius: 20px;
+    position: relative;
+    position: relative;
+    left: 150px;
+}
+
+.cab{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px; 
+    font-weight: bold; 
+    position: relative;
+    top: 90px;
+    right: 460px;
+}
+
+.dep{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px; 
+    font-weight: bold; 
+    position: relative;
+    top: 65px;
+    left: 320px;
+}
+
+.man{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    font-weight: bold; 
+    position: relative;
+    top: 40px;
+    left: 800px;
+}
+
+
+
+.desc{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px; 
+    font-weight: bold; 
+    position: relative;
+    top: -55px;
+    left: 350px;
+}
+
+
+footer {
+    background-color: #FFD495;
+    position: fixed; /* Cambiado de 'absolute' a 'fixed' */
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: black;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 0; /* Eliminado el padding-top para centrar verticalmente */
+}
+
+
+
+
+
+
+
+
+
+

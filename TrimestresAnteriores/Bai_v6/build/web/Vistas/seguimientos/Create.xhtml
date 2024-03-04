@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSeguimientosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+
+                    <h:outputLabel value="#{bundle.CreateSeguimientosLabel_descripción}" for="descripción" styleClass="accioncrear" />
+                    <h:inputText id="descripción" value="#{seguimientosController.selected.descripción}" title="#{bundle.CreateSeguimientosTitle_descripción}" required="true" requiredMessage="#{bundle.CreateSeguimientosRequiredMessage_descripción}"/>
+                    <h:outputLabel value="#{bundle.CreateSeguimientosLabel_responsable}" for="responsable" styleClass="accioncrear" />
+                    <h:selectOneMenu id="responsable" value="#{seguimientosController.selected.responsable}" title="#{bundle.CreateSeguimientosTitle_responsable}" required="true" requiredMessage="#{bundle.CreateSeguimientosRequiredMessage_responsable}">
+                        <f:selectItem itemLabel="Selecciona un Responsable..." itemValue="" />
+                        <f:selectItem itemLabel="María López" itemValue="María López" />
+                        <f:selectItem itemLabel="Carlos Ramírez" itemValue="Carlos Ramírez" />
+                        <f:selectItem itemLabel="Roberto Fernández" itemValue="Roberto Fernández" />
+                        <f:selectItem itemLabel="Julia Jiménez" itemValue="Julia Jiménez" />
+                        <f:selectItem itemLabel="Andrés Vargas" itemValue="Andrés Vargas" />
+                        <f:selectItem itemLabel="Camila Navarro" itemValue="Camila Navarro" />
+                        <f:selectItem itemLabel="Sebastián Peña" itemValue="Sebastián Peña" />
+                    </h:selectOneMenu>
+                    
+                    
+                    <h:outputLabel value="#{bundle.CreateSeguimientosLabel_productos}" for="productos" styleClass="accioncrear" />
+                    <h:selectOneMenu id="productos" value="#{seguimientosController.selected.productos}" title="#{bundle.CreateSeguimientosTitle_productos}" required="true" requiredMessage="#{bundle.CreateSeguimientosRequiredMessage_productos}">
+                        <f:selectItem itemLabel="Selecciona un Producto..." itemValue="" />
+                        <f:selectItem itemLabel="Acondicionador" itemValue="Acondicionador" />
+                        <f:selectItem itemLabel="Mascarilla capilar" itemValue="Mascarilla capilar" />
+                        <f:selectItem itemLabel="Tinte para cabello" itemValue="Tinte para cabello" />
+                        <f:selectItem itemLabel="Secador de pelo" itemValue="Secador de pelo" />
+                        <f:selectItem itemLabel="Plancha para el cabello" itemValue="Plancha para el cabello" />
+                        <f:selectItem itemLabel="Rizador de pelo" itemValue="Rizador de pelo" />
+                        <f:selectItem itemLabel="Laca para el cabello" itemValue="Laca para el cabello" />
+                        <f:selectItem itemLabel="Gel de peinado" itemValue="Gel de peinado" />
+                        <f:selectItem itemLabel="Crema facial" itemValue="Crema facial" />
+                        <f:selectItem itemLabel="Limpiador facial" itemValue="Limpiador facial" />
+                        <f:selectItem itemLabel="Tónico facial" itemValue="Tónico facial" />
+                        <f:selectItem itemLabel="Mascarilla facial" itemValue="Mascarilla facial" />
+                        <f:selectItem itemLabel="Esmalte de uñas" itemValue="Esmalte de uñas" />
+                        <f:selectItem itemLabel="Quitaesmalte" itemValue="Quitaesmalte" />
+                        <f:selectItem itemLabel="Lima de uñas" itemValue="Lima de uñas" />
+                        <f:selectItem itemLabel="Cortaúñas" itemValue="Cortaúñas" />
+                        <f:selectItem itemLabel="Cepillo de pelo" itemValue="Cepillo de pelo" />
+                        <f:selectItem itemLabel="Peine" itemValue="Peine" />
+                    </h:selectOneMenu>
+
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{seguimientosController.create}" value="#{bundle.CreateSeguimientosSaveLink}" styleClass="accionbajo" />
+                <br />
+                <br />
+                <h:commandLink action="#{seguimientosController.prepareList}" value="#{bundle.CreateSeguimientosShowAllLink}" immediate="true" styleClass="accionbajo"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateSeguimientosIndexLink}" styleClass="accionbajo"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

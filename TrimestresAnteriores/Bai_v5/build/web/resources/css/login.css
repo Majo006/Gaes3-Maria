@@ -1,0 +1,19 @@
+
+#logaso{
+    margin: 0 auto;
+    width: 30%;
+    background-color: #75CFB8;
+    padding-top: 30px;
+    margin-top: 50px;
+}
+
+#fondo{
+    background: #FFD495;
+}
+.imagen-logo {
+    width: 150px; /* Ancho más pequeño */
+    height: 70px; /* Altura más pequeña */
+    border-radius: 300px; 
+    position: absolute; 
+    top: 5px; 
+}

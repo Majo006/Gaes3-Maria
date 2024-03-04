@@ -1,0 +1,216 @@
+/* encabezado total */
+header{
+    width: 100%;
+    background-color: #75CFB8;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 0 20px;
+    margin: auto;
+    
+    float: right;
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    z-index: 1000;
+    
+}
+header.woo{
+    background-color: #75CFB8;
+}
+
+
+
+.imagen-fondo {
+    width: 1360px; 
+    height: 400px;
+    margin-top: 90px;
+}
+
+.encabezado {
+    width: 1360px; 
+    height: 180px; 
+    background-color: #75CFB8; 
+    margin-top: -550px;
+}
+
+.imagen-logo {
+    width: 200px; 
+    height: 90px; 
+    border-radius: 300px; 
+    position: absolute; 
+    top: 5px; 
+}
+/* icono de menú */
+.enlace-con-icono{ 
+    color: #000000 ;
+    transform: scale(1.2);
+}
+
+.enlace-con-icono:hover{
+    color: blue;
+}
+
+.icon-menu{
+    font-size: 40px; 
+    position: absolute;
+    left: 250px;
+    top: 30px;
+    color: #000000 ;
+    
+}
+
+/* icono de menú */
+.enlace-con-user{
+    color: #000000 ;
+    transform: scale(1.2);
+}
+
+.enlace-con-user:hover{
+    color: blue;
+}
+
+.icon-user{
+    font-size: 40px;
+    position: absolute;
+    left: 600px;
+    top: -0px;
+}
+
+.ingreso {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold; 
+    position: absolute;
+    left: 680px;
+    top: 7px;
+}
+
+.cuadrado {
+    width: 5px; 
+    height: 65px; 
+    background-color: #000000;
+    border-radius: 10px;
+    position: absolute;
+    left: 807px;
+    top: -15px;
+}
+
+.registro {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold; 
+    position: absolute;
+    left: 820px;
+    top: 7px;
+}
+
+/* Estilo para el cuadro transparente */
+.cuadro-transparente {
+    width: 550px; 
+    height: 250px; 
+    background-color: rgba(139, 135, 135, 0.7); /* Color de fondo de transparecia uwu*/
+    position: absolute;
+    top: 160px;
+    left: 400px;
+    z-index: 1; /* cuadro encima de fondo*/
+}
+
+
+/* Estilos para el contenedor y los textos */
+.contenedor {
+    position: relative;
+    top: 175px;
+    right: 99px;
+    left: 10px;
+    top: 110px;
+    justify-content: space-between; 
+    align-items: center; 
+    color: aliceblue;
+    text-align: center;
+    z-index: 1;
+    
+}
+
+.texto-izquierdo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 45px; 
+    font-weight: bold;
+    text-align: center; /* Centrar el texto horizontalmente */
+    margin: 0 auto; /* Centrar el elemento en el contenedor */
+}
+
+
+ .texto-derecho {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px; 
+    font-weight: bold;
+    
+}
+
+/* Estilos para las señoras  */
+
+.señoras{
+    position: relative;
+    top: 480px;
+}
+
+.seño1{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    position: relative;
+    left: 150px;
+    top: -145px;
+    
+}
+
+.seño2{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    position: relative;
+    left: 160px;
+      top: -140px;
+    
+}
+
+.parrafo{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10px; 
+    font-weight: bold; 
+    position: relative;
+    top: 220px;
+    left: 760px;
+}
+
+.quienes-somos{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    top: 40px;
+    left: 760px;
+    
+}
+
+footer {
+    background-color: #FFD495;
+    position: fixed; /* Cambiado de 'absolute' a 'fixed' */
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: black;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 0; /* Eliminado el padding-top para centrar verticalmente */
+}
+
+
+
+
+

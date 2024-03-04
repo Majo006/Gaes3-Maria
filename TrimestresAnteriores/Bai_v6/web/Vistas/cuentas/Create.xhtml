@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+ <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCuentasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCuentasLabel_nombre}" for="nombre" styleClass="accioncrear"/>
+                    <h:inputText id="nombre" value="#{cuentasController.selected.nombre}" title="#{bundle.CreateCuentasTitle_nombre}" required="true" requiredMessage="#{bundle.CreateCuentasRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreateCuentasLabel_email}" for="email" styleClass="accioncrear" />
+                    <h:inputText id="email" value="#{cuentasController.selected.email}" title="#{bundle.CreateCuentasTitle_email}" required="true" requiredMessage="#{bundle.CreateCuentasRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.CreateCuentasLabel_permiso}" for="permiso" styleClass="accioncrear"/>
+                    <h:selectOneMenu id="permiso" value="#{cuentasController.selected.permiso}" title="#{bundle.CreateCuentasTitle_permiso}" required="true" requiredMessage="#{bundle.CreateCuentasRequiredMessage_permiso}">
+                     <f:selectItem itemLabel="Selecciona un Permiso..." itemValue="" />
+                     <f:selectItem itemLabel="2" itemValue="2" />
+                     <f:selectItem itemLabel="3" itemValue="3" />
+                     </h:selectOneMenu>
+                    <h3>Permisos:</h3>
+                    <p>2:Empleado</p>
+                    <p>3:Cliente</p>
+    
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{cuentasController.create}" value="#{bundle.CreateCuentasSaveLink}" styleClass="accionbajo" />
+                <br />
+                <br />
+                <h:commandLink action="#{cuentasController.prepareList}" value="#{bundle.CreateCuentasShowAllLink}" immediate="true" styleClass="accionbajo" />
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCuentasIndexLink}" styleClass="accionbajo" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

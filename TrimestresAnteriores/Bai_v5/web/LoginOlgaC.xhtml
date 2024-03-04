@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <link href="resources/css/login.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body id="fondo">
+          <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+        <h:form id="logaso">
+            <p:growl id="msj"/>
+            <p:fieldset legend="login">
+                <p:panelGrid columns="2">
+                    <p:outputLabel for="txtUser" value="Usuario"/>
+                    <p:inputText id="txtUser" required="true" value="#{manageCuentas.email}" requiredMessage="Debes llenar este campo" />
+                    <p:outputLabel for="txtPass" value="Contraseña"/>
+                    <p:password id="txtPass" required="true" value="#{manageCuentas.contraseña}" requiredMessage="Se requiere contraseña"/>
+                    <p:column/>
+                    <p:commandButton value="Ingresar" icon="ui-icon-key" action="#{manageCuentas.validar()}"
+                                     />
+                 
+                    
+                </p:panelGrid>
+                
+                
+            </p:fieldset>
+        </h:form>
+
+</h:body>
+
+</html>

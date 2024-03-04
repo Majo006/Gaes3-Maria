@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <title>Olga look Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />             
+        <title><ui:insert name="title">Login</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+    </head>
+    <body class="bodyregistro">
+        <content class="registro">
+        
+         <h:form>
+            <p:panelGrid id="grid" columns="3">
+                <p:outputLabel for="cuentas">Usuario:</p:outputLabel>
+                <p:inputText id="cuentas" value="#{cuentas.login}" size="20" required="true" requiredMessage="Este campo es obligatorio" />
+                
+                <p:message for="cuentas" display="icon"/>
+                
+            <p:outputLabel for="contraseña">Contraseña:</p:outputLabel>
+            <p:password id="contraseña" value="#{cuentas.password}" size="10" required="true" requiredMessage="Este campo es obligatorio" />
+            
+            <p:message for="contraseña" display="icon"/>
+            
+        </p:panelGrid>
+            <p:commandButton value="Ingresar" action="/Vistas/index_cliente" update="grid" />
+      </h:form>
+            </content>
+
+    </body>
+</html>

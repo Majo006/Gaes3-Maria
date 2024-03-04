@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProductosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{productosController.selected.id}" title="#{bundle.CreateProductosTitle_id}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{productosController.selected.nombre}" title="#{bundle.CreateProductosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_marca}" for="marca" />
+                    <h:inputText id="marca" value="#{productosController.selected.marca}" title="#{bundle.CreateProductosTitle_marca}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_marca}"/>
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_precio}" for="precio" />
+                    <h:inputText id="precio" value="#{productosController.selected.precio}" title="#{bundle.CreateProductosTitle_precio}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_precio}"/>
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{productosController.selected.descripcion}" title="#{bundle.CreateProductosTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_descripcion}"/>
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_estado}" for="estado" />
+                    <h:inputText id="estado" value="#{productosController.selected.estado}" title="#{bundle.CreateProductosTitle_estado}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_estado}"/>
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_createdAt}" for="createdAt" />
+                    <h:inputText id="createdAt" value="#{productosController.selected.createdAt}" title="#{bundle.CreateProductosTitle_createdAt}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_updatedAt}" for="updatedAt" />
+                    <h:inputText id="updatedAt" value="#{productosController.selected.updatedAt}" title="#{bundle.CreateProductosTitle_updatedAt}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{productosController.create}" value="#{bundle.CreateProductosSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{productosController.prepareList}" value="#{bundle.CreateProductosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateProductosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
