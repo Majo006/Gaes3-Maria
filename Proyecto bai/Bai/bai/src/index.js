@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import nosotros from './nosotros';
+import ListUsuario from './vistas/ListUsuario';
+import LoginForm from './login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <nosotros />
+    
   </React.StrictMode>
 );
 

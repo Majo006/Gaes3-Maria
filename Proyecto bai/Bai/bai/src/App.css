@@ -48,6 +48,21 @@
   border-color: #FFD495;
  
 }
+.login{
+  background-color: #FFD495;
+  border-radius: 10%;
+  height: 20%;
+  border-color: #FFD495;
+ 
+}
+.registar{
+  background-color: #FFD495;
+  border-radius: 10%;
+  height: 20%;
+  border-color: #FFD495;
+  right: -50px;
+ 
+}
 
 @keyframes App-logo-spin {
   from {

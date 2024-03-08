@@ -2,10 +2,9 @@
 import img from './img/img.png';
 import img_1 from './img/img_1.png';
 // Agrega más importaciones si necesitas más imágenes
-
 import './App.css';
 import'./nosotros.js'
-import Carousel from './carrusel.js';
+
 
 
 function App() {
@@ -22,14 +21,12 @@ function App() {
       <div className='App-header2'>
         <button className='botonN'>nosotros</button>
         <button className='botonN'>Servicios</button>
+        <button className='login'>Inciar sesión</button>
+        <button className='registar'>Registrarse</button>
 
       </div>
 
 
-      <div>
-      <h1>My Carousel</h1>
-      <Carousel />
-    </div>
 
     </div>
   );
