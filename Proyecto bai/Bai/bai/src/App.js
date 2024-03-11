@@ -4,6 +4,7 @@ import img_1 from './img/img_1.png';
 // Agrega más importaciones si necesitas más imágenes
 import './App.css';
 import'./nosotros.js'
+import ListUsuario from './vistas/ListUsuario.js';
 
 
 
@@ -25,8 +26,7 @@ function App() {
         <button className='registar'>Registrarse</button>
 
       </div>
-
-
+      <ListUsuario/>
 
     </div>
   );

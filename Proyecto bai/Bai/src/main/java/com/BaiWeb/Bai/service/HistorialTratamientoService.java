@@ -10,9 +10,5 @@ import java.util.List;
 public interface HistorialTratamientoService {
     HistorialTratamientoDTO CreateHistorialTratamiento(HistorialTratamientoDTO historialTratamientoDTO);
     HistorialTratamientoDTO GetHistorialTratamientoById(Long Id);
-
-    HistorialTratamientoDTO GetHistorialTratamientoByCitas(CitaDTO cita);
-    HistorialTratamientoDTO GetHistorialTratamientoByUsuario(UsuarioDTO usuario);
-    HistorialTratamientoDTO GetHistorialTratamientoByEmpleado(EmpleadoDTO empleado);
     List<HistorialTratamientoDTO> getAllHistorialTratamiento();
 }

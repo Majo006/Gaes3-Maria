@@ -10,9 +10,5 @@ import java.util.List;
 public interface RecordatorioService {
     RecordatorioDTO CreateRecordatorio(RecordatorioDTO recordatorioDTO);
     RecordatorioDTO GetRecordatorioById(Long Id);
-    RecordatorioDTO GetRecordatorioByfecha(Date fecha);
-    RecordatorioDTO GetRecordatorioByhora(Time hora);
-    RecordatorioDTO GetRecordatorioBymensaje(String mensaje);
-    RecordatorioDTO GetRecordatorioByEstado_recordatorio(Estado_RecordatorioDTO estado_recordatorio);
     List<RecordatorioDTO> getAllRecordatorio();
 }

@@ -1,69 +1,40 @@
 package com.BaiWeb.Bai.service.impl;
 
 import com.BaiWeb.Bai.DTO.*;
+import com.BaiWeb.Bai.entity.Cita;
+import com.BaiWeb.Bai.mapper.CitaMapper;
+import com.BaiWeb.Bai.repository.CitaRepository;
 import com.BaiWeb.Bai.service.CitaService;
 import lombok.AllArgsConstructor;
+import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
 public class CitaServiceImpl implements CitaService {
+    private CitaRepository citaRepository;
     @Override
     public CitaDTO CreateCita(CitaDTO citaDTO) {
-        return null;
+        Cita cita = CitaMapper.mapToCita(citaDTO);
+        Cita savedCita = citaRepository.save(cita);
+        return CitaMapper.mapToCitaDTO(savedCita);
     }
 
     @Override
-    public CitaDTO GetCitaById(Long Id) {
-        return null;
+    public CitaDTO GetCitaById(Long id) {
+        Cita cita = citaRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Cita not found for id: " + id));
+        return CitaMapper.mapToCitaDTO(cita);
     }
-
-    @Override
-    public CitaDTO GetCitaByfecha(Date fecha) {
-        return null;
-    }
-
-    @Override
-    public CitaDTO GetCitaByhora(Time hora) {
-        return null;
-    }
-
-    @Override
-    public CitaDTO GetCitaByconfirmacion(Boolean confirmacion) {
-        return null;
-    }
-
-    @Override
-    public CitaDTO GetCitaByAgenda(AgendaDTO agenda) {
-        return null;
-    }
-
-    @Override
-    public CitaDTO GetCitaByUsuario(UsuarioDTO usuario) {
-        return null;
-    }
-
-    @Override
-    public CitaDTO GetCitaByEmpleado(EmpleadoDTO empleado) {
-        return null;
-    }
-
-    @Override
-    public CitaDTO GetCitaByEstado(EstadoCitaDTO estadoCita) {
-        return null;
-    }
-
-    @Override
-    public CitaDTO GetCitaByServicio(ServicioDTO servicio) {
-        return null;
-    }
-
     @Override
     public List<CitaDTO> getAllCita() {
-        return null;
+        List<Cita> citas = citaRepository.findAll();
+        return citas.stream().map(CitaMapper::mapToCitaDTO)
+                .collect(Collectors.toList());
     }
 }

@@ -15,7 +15,7 @@ import java.util.List;
 @CrossOrigin("*")
 public class UsuarioController {
     private UsuarioService usuarioService;
-    @PostMapping("(/add")
+    @PostMapping("/add")
     public ResponseEntity<UsuarioDTO>
     createUsuario(@RequestBody UsuarioDTO usuarioDTO){
         UsuarioDTO savedUsuario = usuarioService.createUsuario(usuarioDTO);

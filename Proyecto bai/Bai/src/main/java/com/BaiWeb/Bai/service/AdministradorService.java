@@ -11,12 +11,5 @@ public interface AdministradorService {
    AdministradorDTO CreateAdministrador(AdministradorDTO administradorDTO);
 
     AdministradorDTO getAdministradorById(Long Id);
-    AdministradorDTO getAdministradorBynombre(String nombre);
-
-    AdministradorDTO getAdministradorByapellido(String apellido);
-    AdministradorDTO getAdministradorBytelefono(String telefono);
-    AdministradorDTO getAdministradorBycorreo(String correo);
-    AdministradorDTO getAdministradorBycontraseña(String contraseña);
-    AdministradorDTO getAdministradorByUsuario(UsuarioDTO usuario);
     List<AdministradorDTO> getAllAdministrador();
 }

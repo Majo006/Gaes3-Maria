@@ -13,11 +13,5 @@ public interface ServicioService {
 
     ServicioDTO getServicioById(Long Id);
 
-    ServicioDTO GetServicioBynombre(String nombre);
-    ServicioDTO GetServicioBydescripcion(String descripcion);
-    ServicioDTO GetServicioByduracionaprox(Time duracionaprox);
-
-    ServicioDTO GetServicioByprecioaprox(BigDecimal precioaprox);
-
     List<ServicioDTO> getAllServicio();
 }
