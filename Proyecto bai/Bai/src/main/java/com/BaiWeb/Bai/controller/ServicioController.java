@@ -17,7 +17,7 @@ import java.util.List;
 @CrossOrigin("*")
 public class ServicioController {
     private ServicioService servicioService;
-    @PostMapping("(/add")
+    @PostMapping("/add")
     public ResponseEntity<ServicioDTO>
     createServicio(@RequestBody ServicioDTO servicioDTO){
         ServicioDTO savedServicio = servicioService.CreateServicio(servicioDTO);

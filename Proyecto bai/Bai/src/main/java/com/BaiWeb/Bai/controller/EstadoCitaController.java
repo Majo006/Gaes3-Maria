@@ -26,7 +26,7 @@ public class EstadoCitaController {
         EstadoCitaDTO estadoCitaDTO=estadoCitaService.GetEstadoCitaById(id);
         return  ResponseEntity.ok(estadoCitaDTO);
     }
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<EstadoCitaDTO>>
     getAllEstadoCita(){
         List<EstadoCitaDTO> estado=estadoCitaService.getAllEstadoCita();

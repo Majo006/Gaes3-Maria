@@ -30,10 +30,12 @@
 .App-link {
   color: #61dafb;
 }
-.App-header2{
+.App-header2 {
+  display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
   background-color: #FFD495;
-  min-height: 30px;
-  display: inherit;
+  min-height: 50px;
   position: sticky;
   top: 94px;
   z-index: 1000;
@@ -41,13 +43,18 @@
   font-size: calc(10px + 2vmin);
   color: black;
 }
-.botonN{
+
+.botonN {
   background-color: #FFD495;
   border-radius: 10%;
-  height: 20%;
-  border-color: #FFD495;
- 
+  height: 20px;
+  padding: 5px 10px;
+  margin-right: 10px; /* Espacio entre los enlaces */
+  text-decoration: none;
+  color: black;
 }
+
+
 .login{
   background-color: #FFD495;
   border-radius: 10%;
@@ -71,4 +78,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* sidebarStyles.css */
+/* App.css */
+/*.sidebar {
+  width: 200px; 
+  height: 100vh; 
+  background-color: #FFD495; 
+  color: white; 
+}
+
+.menu-item {
+  padding: 10px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+.menu-item:hover {
+  background-color: #FFD495; 
+
+.sub-menu {
+  background-color: #FFD495; 
+}
+
+.sub-menu-item {
+  padding: 8px 20px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+.sub-menu-item:hover {
+  background-color: #FFD495; 
+}*/
+.siderbar{
+  position:fixed;
+  height: 100%;
+  overflow-y:auto ;
+  overflow-x: hidden;
+  z-index: 3;
+  width: 200px; 
+  height: 100vh; 
+  background-color: #FFD495; 
+  color: black;
 }
