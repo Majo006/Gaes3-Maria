@@ -114,23 +114,11 @@
 .siderbar{
   position:fixed;
   height: 100%;
-  top: -50px;
   overflow-y:auto ;
   overflow-x: hidden;
   z-index: 3;
-  width: 2px; 
-  height: vh; 
-  background-color: #75CFB8; 
+  width: 200px; 
+  height: 100vh; 
+  background-color: #FFD495; 
   color: black;
-  
-}
-.App-footer{
-  background-color: #75CFB8;
-  text-align: center;
-  padding: 20px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  
 }

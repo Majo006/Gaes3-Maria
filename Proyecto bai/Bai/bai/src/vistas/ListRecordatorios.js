@@ -1,47 +1,50 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import RecordatorioService from '../services/RecordatorioService'; // Importa el servicio de recordatorios
 
 
-class ListRecordatorios extends Component {
-    render() {
-        return (
-            <div className='container'>
+const ListRecordatorios = () => {
+    const [recordatorios, setRecordatorios] = useState([]);
+
+    useEffect(() => {
+        RecordatorioService.getAllRecordatorio()
+            .then(response => {
+                setRecordatorios(response.data);
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, []); // Agrega una coma después del array vacío para que useEffect se ejecute solo una vez al montar el componente
+
+    return (
+        <div className='container'>
             <h2 className='text-center'>Lista de Recordatorios</h2>
-            <table className='table table-bordered table striped'>
+            <table className='table table-bordered table-striped'>
                 <thead>
-                    <th>Id</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Mensaje</th>
-                    <th>Estado</th>
+                    <tr> {/* Corrige la estructura de la tabla, el encabezado debe estar dentro de una fila (tr) */}
+                        <th>Id</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Mensaje</th>
+                        <th>Estado</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    {
-                        recordatorio.map(
-                            recordatorio=>
-                            <tr key={recordatorio.id}>
-                                <td>{recordatorio.fecha}</td>
-                                <td>{recordatorio.hora}</td>
-                                <td>{recordatorio.mensaje}</td>
-                                <td>{recordatorio.estado_recordatorio}</td>
-                                
-                            </tr>
-                        )
-                    }
+                    {recordatorios.map(recordatorio => (
+                        <tr key={recordatorio.id}>
+                            <td>{recordatorio.id}</td> {/* Agrega el campo 'id' en la tabla */}
+                            <td>{recordatorio.fecha}</td>
+                            <td>{recordatorio.hora}</td>
+                            <td>{recordatorio.mensaje}</td>
+                            <td>{recordatorio.estado_recordatorio}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
-
-
-
         </div>
-        );
-    }
-}
-
-
-ListRecordatorios.propTypes = {
-
+    );
 };
 
+ListRecordatorios.propTypes = {};
 
 export default ListRecordatorios;

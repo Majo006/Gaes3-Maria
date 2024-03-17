@@ -1,53 +1,52 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import CitaService from '../services/CitaService';
 
+const ListCitas = () => {
+    const [citas, setCitas] = useState([]);
 
-class ListCitas extends Component {
-    render() {
-        return (
-            <div className='container'>
+    useEffect(() => {
+        CitaService.getAllCita()
+            .then(response => {
+                setCitas(response.data);
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, []); // El segundo argumento [] indica que useEffect se ejecutará solo una vez, al montar el componente
+
+    return (
+        <div className='container'>
             <h2 className='text-center'>Lista de Citas</h2>
-            <table className='table table-bordered table striped'>
+            <table className='table table-bordered table-striped'>
                 <thead>
-                    <th>Id</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Confirmacion</th>
-                    <th>Usuario</th>
-                    <th>Empleado</th>
-                    <th>Estado</th>
-                    <th>Servicio</th>
+                    <tr>
+                        <th>Id</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Confirmacion</th>
+                        <th>Usuario</th>
+                        <th>Empleado</th>
+                        <th>Estado</th>
+                        <th>Servicio</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    {
-                        cita.map(
-                            cita=>
-                            <tr key={cita.id}>
-                                <td>{cita.fecha}</td>
-                                <td>{cita.hora}</td>
-                                <td>{cita.confirmacion}</td>
-                                <td>{cita.usuario}</td>
-                                <td>{cita.empleado}</td>
-                                <td>{cita.estado}</td>
-                                <td>{cita.servicio}</td>
-                                
-                            </tr>
-                        )
-                    }
+                    {citas.map(cita => (
+                        <tr key={cita.id}>
+                            <td>{cita.fecha}</td>
+                            <td>{cita.hora}</td>
+                            <td>{cita.confirmacion}</td>
+                            <td>{cita.usuario}</td>
+                            <td>{cita.empleado}</td>
+                            <td>{cita.estado}</td>
+                            <td>{cita.servicio}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
-
-
-
         </div>
-        );
-    }
-}
-
-
-ListCitas.propTypes = {
-
+    );
 };
-
 
 export default ListCitas;

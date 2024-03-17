@@ -1,21 +1,38 @@
 import React from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import ListUsuario from './vistas/ListUsuario';
+import ListCitas from './vistas/ListCitas';
+import DashboardUsuario from './dashboarUsuario';
 
 const SidebarComponent = () => {
   return (
+
     <Sidebar className='siderbar' width="200px">
       <Menu>
-        <SubMenu title="Charts">
-          <MenuItem>Pie charts</MenuItem>
-          <MenuItem>Line charts</MenuItem>
-        </SubMenu>
-        <MenuItem>Citas</MenuItem>
+        <SubMenu title="Charts" >
+          <MenuItem>
+          
+            <Link to='/listausuario'> 
+            Usuario
+            </Link>
+
+          </MenuItem>
+          <MenuItem>
+          <Link to='listacitas'>
+            Citas
+            </Link>
+            </MenuItem>
         <MenuItem>Servicios</MenuItem>
-        <MenuItem>Usuarios</MenuItem>
         <MenuItem>Empleados</MenuItem>
+        </SubMenu>
+
       </Menu>
     </Sidebar>
+    
+
   );
 };
 
