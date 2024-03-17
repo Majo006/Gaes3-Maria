@@ -13,20 +13,31 @@ const SidebarComponent = () => {
     <Sidebar className='siderbar' width="200px">
       <Menu>
         <SubMenu title="Charts" >
+          <SubMenu>
           <MenuItem>
           
             <Link to='/listausuario'> 
             Usuario
             </Link>
 
+
           </MenuItem>
           <MenuItem>
-          <Link to='listacitas'>
+          <Link to='/AgregarUsuario'>
+            Agregar Usuario
+            </Link>
+          </MenuItem>
+          </SubMenu>
+          <MenuItem>
+          <Link to='/listacitas'>
             Citas
             </Link>
             </MenuItem>
-        <MenuItem>Servicios</MenuItem>
-        <MenuItem>Empleados</MenuItem>
+            <MenuItem>
+            <Link to='/agregarcita'>
+            Agregar Cita
+            </Link>
+            </MenuItem>
         </SubMenu>
 
       </Menu>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UsuarioService from '../services/UsuarioService';
 import { Link } from 'react-router-dom';
+import Dashboard from '../Dashboard';
 
 
 const ListUsuario = () => {
@@ -18,6 +19,8 @@ const ListUsuario = () => {
     }, []);
 
     return (
+        <div>
+            <Dashboard/>
         <div className='container'>
             <h2 className='text-center'>Lista de Usuarios</h2>
             
@@ -45,6 +48,7 @@ const ListUsuario = () => {
                     ))}
                 </tbody>
             </table>
+        </div>
         </div>
     );
 };

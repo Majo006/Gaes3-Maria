@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CitaService from '../services/CitaService';
+import Dashboard from '../Dashboard';
 
 const ListCitas = () => {
     const [citas, setCitas] = useState([]);
@@ -16,6 +17,8 @@ const ListCitas = () => {
     }, []); // El segundo argumento [] indica que useEffect se ejecutará solo una vez, al montar el componente
 
     return (
+        <div>
+            <Dashboard/>
         <div className='container'>
             <h2 className='text-center'>Lista de Citas</h2>
             <table className='table table-bordered table-striped'>
@@ -24,7 +27,6 @@ const ListCitas = () => {
                         <th>Id</th>
                         <th>Fecha</th>
                         <th>Hora</th>
-                        <th>Confirmacion</th>
                         <th>Usuario</th>
                         <th>Empleado</th>
                         <th>Estado</th>
@@ -45,6 +47,7 @@ const ListCitas = () => {
                     ))}
                 </tbody>
             </table>
+        </div>
         </div>
     );
 };

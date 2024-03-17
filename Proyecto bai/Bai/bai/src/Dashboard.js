@@ -17,7 +17,7 @@ function Dashboard() {
         </header>
         <h2>Olga Look</h2>
         <p>La belleza esta tanto dentro como por fuera</p>
-        <FooterComponent/>
+
       </div>
     );
   }

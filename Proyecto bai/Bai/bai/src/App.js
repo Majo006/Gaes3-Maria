@@ -19,7 +19,7 @@ function App() {
        
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Nosotros/>} />
           <Route path='/Header' element={<HeaderComponents />} />
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path='/AgregarUsuario' element={<AgregarUsuario />} />
@@ -31,6 +31,7 @@ function App() {
           <Route path='/agregarcita' element={<AgregarCita />} />
           <Route path='/footer' element={<FooterComponent />} />
           <Route path='/nosotros' element={<Nosotros />} />
+          <Route path='/agregarcita' element={<AgregarCita/>} />
         </Routes>
       </BrowserRouter>
       
