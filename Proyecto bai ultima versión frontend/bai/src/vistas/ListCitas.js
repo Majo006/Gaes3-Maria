@@ -24,10 +24,10 @@ const ListCitas = () => {
             <table className='table table-bordered table-striped'>
                 <thead>
                     <tr>
-                    
+                        <th>Id</th>
                         <th>Fecha</th>
                         <th>Hora</th>
-                        <th>cliente</th>
+                        <th>Usuario</th>
                         <th>Empleado</th>
                         <th>Estado</th>
                         <th>Servicio</th>
@@ -38,7 +38,8 @@ const ListCitas = () => {
                         <tr key={cita.id}>
                             <td>{cita.fecha}</td>
                             <td>{cita.hora}</td>
-                            <td>{cita.cliente}</td>
+                            <td>{cita.confirmacion}</td>
+                            <td>{cita.usuario}</td>
                             <td>{cita.empleado}</td>
                             <td>{cita.estado}</td>
                             <td>{cita.servicio}</td>

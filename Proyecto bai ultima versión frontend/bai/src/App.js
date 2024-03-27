@@ -12,8 +12,6 @@ import Nosotros from './nosotros.js';
 import RegistrationForm from './registro.js';
 import dashboarUsuario from './dashboarUsuario.js';
 import Home from './Home.js';
-import Paginap from './paginap.js';
-import HeaderPrincipalComponent from './components/HeaderPrincipalComponent.js';
 
 function App() {
   return (
@@ -34,8 +32,6 @@ function App() {
           <Route path='/footer' element={<FooterComponent />} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/agregarcita' element={<AgregarCita/>} />
-          <Route path='/principal' element={<Paginap/>}/>
-          <Route path='/header2' element={<HeaderPrincipalComponent/>}></Route>
         </Routes>
       </BrowserRouter>
       

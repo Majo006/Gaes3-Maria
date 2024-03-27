@@ -34,13 +34,6 @@ const AgregarCita = () => {
             alert('No puedes seleccionar una hora pasada');
             return;
         }
-        const fivePM = new Date();
-        fivePM.setHours(17, 0, 0, 0); // Establecer la hora límite en las 5:00 PM
-        if (selectedTime >= fivePM) {
-            alert('Solo puedes agendar citas hasta las 5:00 PM');
-            return;
-        }
-    
 
         // Resto del código para guardar la cita
         const cita = { fecha, hora, confirmacion, usuario, empleado, estado, servicio };

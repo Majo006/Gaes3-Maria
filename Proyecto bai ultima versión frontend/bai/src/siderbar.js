@@ -13,7 +13,7 @@ const SidebarComponent = () => {
     <Sidebar className='siderbar' width="200px">
       <Menu>
         <SubMenu title="Charts" >
-          
+          <SubMenu>
           <MenuItem>
           
             <Link to='/listausuario'> 
@@ -27,7 +27,7 @@ const SidebarComponent = () => {
             Agregar Usuario
             </Link>
           </MenuItem>
-          
+          </SubMenu>
           <MenuItem>
           <Link to='/listacitas'>
             Citas

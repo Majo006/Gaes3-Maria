@@ -1,0 +1,11 @@
+.salon,
+.cabello,
+.manicura {
+  width: 1000px; /* Ancho deseado */
+  height: 400px; /* Alto deseado */
+  object-fit: cover; /* Escalar la imagen para que llene el contenedor */
+  border-radius: 8px; /* Borde redondeado */
+  margin: 10px; /* Margen entre las imágenes */
+}
+
+
