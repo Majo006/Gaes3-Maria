@@ -15,7 +15,7 @@ import java.util.List;
 @CrossOrigin("*")
 public class UsuarioController {
     private UsuarioService usuarioService;
-    @PostMapping("/add")
+    @PostMapping
     public ResponseEntity<UsuarioDTO>
     createUsuario(@RequestBody UsuarioDTO usuarioDTO){
         UsuarioDTO savedUsuario = usuarioService.createUsuario(usuarioDTO);
@@ -29,7 +29,7 @@ public class UsuarioController {
     }
 
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<List<UsuarioDTO>>
     getAllUsuario(){
         List<UsuarioDTO> usuario = usuarioService.getAllUsuarios();
