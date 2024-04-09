@@ -13,7 +13,7 @@ export const HeaderPrincipalComponent = () => {
       </header>
 
       <div className='App-header2'>
-        <a className="botonN" href="/nosotros">Nosotros</a>
+        <a className="botonN" href="/Nosotrosp">Nosotros</a>
         <a className="botonN" href="/">Cerrar Sesión</a>
         
 

@@ -1,51 +1,33 @@
 import React, { useState } from 'react';
+import { Navigate, Link } from 'react-router-dom';
 import Dashboard from '../../Dashboard';
-import ListCitas from '../ListCitas';
+import CitaService from '../../services/CitaService';
 
 const AgregarCita = () => {
     const [fecha, setFecha] = useState('');
     const [hora, setHora] = useState('');
-    const [confirmacion, setConfirmacion] = useState('');
-    const [usuario, setUsuario] = useState('');
+    const [cliente, setCliente] = useState('');
     const [empleado, setEmpleado] = useState('');
     const [estado, setEstado] = useState('');
     const [servicio, setServicio] = useState('');
     const [agregada, setAgregada] = useState(false);
+    const [ setError] = useState('');
 
-    const guardarCita = (e) => {
+    const savedCita = (e) => {
         e.preventDefault();
-
-        // Obtener fecha y hora actual
-        const now = new Date();
-        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-        // Convertir la fecha seleccionada a objeto Date
-        const selectedDate = new Date(fecha);
-        const selectedTime = new Date(`${fecha}T${hora}`);
-
-        // Validar que la fecha seleccionada no sea antes de hoy
-        if (selectedDate < today) {
-            alert('No puedes seleccionar una fecha pasada o del mismo día');
-            return;
-        }
-
-        // Validar que la hora seleccionada no haya pasado en el día actual
-        if (selectedDate.getTime() === today.getTime() && selectedTime < now) {
-            alert('No puedes seleccionar una hora pasada');
-            return;
-        }
-
-        // Resto del código para guardar la cita
-        const cita = { fecha, hora, confirmacion, usuario, empleado, estado, servicio };
-        console.log(cita);
-
-        setTimeout(() => {
-            setAgregada(true);
-        }, 1000);
-    }
+        const cita = { fecha, hora, cliente, empleado, estado, servicio };
+        CitaService.createCita(cita)
+            .then(() => {
+                setAgregada(true);
+            })
+            .catch((error) => {
+                setError('Error al guardar la cita');
+                console.log(error);
+            });
+    };
 
     if (agregada) {
-        return <ListCitas />;
+        return <Navigate to='/listacita' />;
     }
 
     return (
@@ -56,12 +38,13 @@ const AgregarCita = () => {
                     <div className='card col-md-6 offset-md-3 offset-md-3'>
                         <h2 className='text-center'>Agregar Cita</h2>
                         <div className='card-body'>
-                            <form onSubmit={guardarCita}>
+                            <form onSubmit={savedCita}>
                                 <div className='form-group mb-2'>
                                     <label className='form-label'>Fecha</label>
                                     <input
                                         type="date"
                                         className="form-control"
+                                        name='fecha'
                                         value={fecha}
                                         onChange={(e) => setFecha(e.target.value)}
                                     />
@@ -71,17 +54,20 @@ const AgregarCita = () => {
                                     <input
                                         type="time"
                                         className="form-control"
+                                        name='hora'
                                         value={hora}
                                         onChange={(e) => setHora(e.target.value)}
+                                        step="1"
                                     />
                                 </div>
                                 <div className='form-group mb-2'>
-                                    <label className='form-label'>Usuario</label>
+                                    <label className='form-label'>Cliente</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        value={usuario}
-                                        onChange={(e) => setUsuario(e.target.value)}
+                                        name='cliente'
+                                        value={cliente}
+                                        onChange={(e) => setCliente(e.target.value)}
                                     />
                                 </div>
                                 <div className='form-group mb-2'>
@@ -89,6 +75,7 @@ const AgregarCita = () => {
                                     <input
                                         type="text"
                                         className="form-control"
+                                        name='empleado'
                                         value={empleado}
                                         onChange={(e) => setEmpleado(e.target.value)}
                                     />
@@ -98,11 +85,12 @@ const AgregarCita = () => {
                                     
                                     <select
                                     className="form-control"
+                                    name='estado'
                                     value={estado}
                                     onChange={(e) => setEstado(e.target.value)}
                                        >
                                     <option value="">Seleccionar Estado</option>
-                                    <option value="Agednada">Agendada</option>
+                                    <option value="Agendada">Agendada</option>
                                     <option value="Cancelada">Cancelada</option>
                                     <option value="Reagendada">Reagendada</option>
                                     <option value='Reagendada por Empleado'>Reagendada por empleado</option>
@@ -114,11 +102,13 @@ const AgregarCita = () => {
                                     <input
                                         type="text"
                                         className="form-control"
+                                        name='servicio'
                                         value={servicio}
                                         onChange={(e) => setServicio(e.target.value)}
                                     />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Guardar Cita</button>
+                                <button className="btn btn-succes" onClick={(e) => savedCita (e)}>Agendar</button>
+                                <Link to='/listacita' className='btn btn-danger'>Cancelar</Link>
                             </form>
                         </div>
                     </div>

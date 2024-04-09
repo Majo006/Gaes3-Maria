@@ -10,8 +10,17 @@ import AgregarCita from './vistas/Citas/AgregarCita.js';
 import FooterComponent from './components/FooterComponent.js';
 import Nosotros from './nosotros.js';
 import RegistrationForm from './registro.js';
-import dashboarUsuario from './dashboarUsuario.js';
 import Home from './Home.js';
+import Paginap from './paginap.js';
+import HeaderPrincipalComponent from './components/HeaderPrincipalComponent.js';
+import CatalogoServicios from './CatalogoServicio.js';
+import Servicio from './Servicios.js';
+import ServicioDetalle from './ServicioDedatelle.js';
+import Cortepeloi from './Cortepeloi.js';
+import UAs from './uñas.js';
+import Tinturap from './tinturap.js';
+import Nosotrosp from './nosotrosp.js';
+import AgregarCitaCliente from './vistas/Citas/AgregarCitaCliente.js';
 
 function App() {
   return (
@@ -19,11 +28,12 @@ function App() {
        
       <BrowserRouter>
         <Routes>
+          <Route path='/home' element={<Home/>}></Route>
           <Route path="/" element={<Nosotros/>} />
+          <Route path='/nosotros' element={<Nosotrosp/>}/>
           <Route path='/Header' element={<HeaderComponents />} />
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path='/AgregarUsuario' element={<AgregarUsuario />} />
-          <Route path='/dashboarusuario' element={<dashboarUsuario />} />
           <Route path='/listausuario' element={<ListUsuario />} />
           <Route path='/login' element={<LoginForm />} />
           <Route path='/registro' element={<RegistrationForm />} />
@@ -32,6 +42,15 @@ function App() {
           <Route path='/footer' element={<FooterComponent />} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/agregarcita' element={<AgregarCita/>} />
+          <Route path='/principal' element={<Paginap/>}/>
+          <Route path='/header2' element={<HeaderPrincipalComponent/>}></Route>
+          <Route path='/catalogo' element={<CatalogoServicios/>}/>
+          <Route path='/servicio' element={<Servicio></Servicio>}></Route>
+          <Route path='/servicio/:id' element={<ServicioDetalle/>}/>
+          <Route path='/corte' element={<Cortepeloi/>}/>
+          <Route path='/manicura' element={<UAs/>}/>
+          <Route path='/tintura' element={<Tinturap/>}/>
+          <Route path='/agendarcliente' element={<AgregarCitaCliente/>}/>
         </Routes>
       </BrowserRouter>
       

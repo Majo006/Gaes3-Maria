@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
 import './login.css';
-import { Navigate } from 'react-router-dom';
-import App from './App';
-import Home from './Home';
+import HeaderComponents from './components/headerComponents';
+import FooterComponent from './components/FooterComponent';
 
 function LoginForm() {
   const [correoelectronico, setcorreoelectronico] = useState('');
   const [contraseña, setcontraseña] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Email:', correoelectronico);
     console.log('Contraseña:', contraseña);
-    setIsLoggedIn(true);
+
+    if (correoelectronico === 'admin@example.com' && contraseña === 'admin123') {
+      window.location.href = '/dashboard';
+    } else if (correoelectronico === 'cliente@example.com' && contraseña === 'cliente123') {
+      window.location.href = '/principal';
+    } else {
+      alert('Usuario no encontrado o contraseña incorrecta');
+    }
   };
 
-  if (isLoggedIn) {
-    return <Navigate to="/Dashboard" />;
-  }
   return (
-
-    <div>
-          <Home/>
+    <>
+      <HeaderComponents />
       <div className='container'>
         <div className='row'>
           <div className='card col-md-6 offset-md-3 offset-md-3'>
@@ -57,7 +58,8 @@ function LoginForm() {
           </div>
         </div>
       </div>
-    </div>
+      <FooterComponent />
+    </>
   );
 }
 

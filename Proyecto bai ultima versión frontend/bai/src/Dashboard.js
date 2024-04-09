@@ -1,8 +1,6 @@
 import React from "react";
 import img from './img/img.png';
-import ListUsuario from "./vistas/ListUsuario";
 import SidebarComponent from "./siderbar";
-import FooterComponent from "./components/FooterComponent";
 
 function Dashboard() {
     return (
@@ -11,7 +9,6 @@ function Dashboard() {
           
   
           <img src={img}  className="App-logo" alt="logo"/>
-          <nosotros/>
           <SidebarComponent/>
   
         </header>

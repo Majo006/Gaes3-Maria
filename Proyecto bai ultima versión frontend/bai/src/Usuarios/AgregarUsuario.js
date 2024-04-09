@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Dashboard from '../Dashboard';
 import ListUsuario from '../vistas/ListUsuario'; // Importa tu componente de lista de usuarios
+import UsuarioService from '../services/UsuarioService';
+import { Link, Navigate } from 'react-router-dom';
+
 
 export const AgregarUsuario = () => {
     const [nombre, setNombre] = useState('');
@@ -14,7 +17,12 @@ export const AgregarUsuario = () => {
     const savedUsuario = (e) => {
         e.preventDefault();
         const usuario = { nombre, apellido, correoelectronico, telefono, contraseña, tipousuario };
-        console.log(usuario);
+        UsuarioService.createUsuario(usuario).then((response)=>{
+            console.log(response.data);
+            Navigate('/listausuario');
+        }).catch(error => {
+            console.log(error)
+        })
 
         // Aquí iría la lógica para guardar el usuario en el servidor
         // Simulamos que la operación de guardado es exitosa después de 1 segundo
@@ -43,6 +51,7 @@ export const AgregarUsuario = () => {
                                         type="text"
                                         className="form-control"
                                         placeholder='Nombre'
+                                        name='nombre'
                                         value={nombre}
                                         onChange={(e) => setNombre(e.target.value)}
                                     />
@@ -53,6 +62,7 @@ export const AgregarUsuario = () => {
                                         type="text"
                                         className="form-control"
                                         placeholder='Apellido'
+                                        name='apellido'
                                         value={apellido}
                                         onChange={(e) => setApellido(e.target.value)}
                                     />
@@ -63,6 +73,7 @@ export const AgregarUsuario = () => {
                                         type="email"
                                         className="form-control"
                                         placeholder='Correo Electrónico'
+                                        name='correoelectronico'
                                         value={correoelectronico}
                                         onChange={(e) => setCorreoelectronico(e.target.value)}
                                     />
@@ -73,6 +84,7 @@ export const AgregarUsuario = () => {
                                         type="text"
                                         className="form-control"
                                         placeholder='Teléfono'
+                                        name='telefono'
                                         value={telefono}
                                         onChange={(e) => setTelefono(e.target.value)}
                                     />
@@ -83,6 +95,7 @@ export const AgregarUsuario = () => {
                                         type="password"
                                         className="form-control"
                                         placeholder='Contraseña'
+                                        name='contraseña'
                                         value={contraseña}
                                         onChange={(e) => setContraseña(e.target.value)}
                                     />
@@ -90,6 +103,7 @@ export const AgregarUsuario = () => {
                                 <div className='form-group mb-2'>
                                     <label className='form-label'> Tipo de Usuario</label>
                                     <select
+                                        name='tipousuario'
                                         className="form-control"
                                         value={tipousuario}
                                         onChange={(e) => setTipoUsuario(e.target.value)}
@@ -100,7 +114,8 @@ export const AgregarUsuario = () => {
                                         <option value="empleado">Empleado</option>
                                     </select>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Guardar Usuario</button>
+                                <button className="btn btn-succes" onClick={(e) => savedUsuario (e)}>Guardar Usuario</button>
+                                <Link to='/listausuario' className='btn btn-danger'>Cancelar</Link>
                             </form>
                         </div>
                     </div>

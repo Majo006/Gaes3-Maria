@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import UsuarioService from '../services/UsuarioService';
-import { Link } from 'react-router-dom';
 import Dashboard from '../Dashboard';
 
 
@@ -23,7 +22,6 @@ const ListUsuario = () => {
             <Dashboard/>
         <div className='container'>
             <h2 className='text-center'>Lista de Usuarios</h2>
-            
             <table className='table table-bordered table-striped'>
                 <thead>
                     <tr>
